@@ -15,8 +15,9 @@ ARG NUMPY_VER=2.2.6
 ARG MATPLOTLIB_VER=3.10.7
 ARG SEABORN_VER=0.13.2
 ARG GEOPANDAS_VER=1.1.1
-# Added Altair version argument here
 ARG ALTAIR_VER=5.5.0
+ARG SNAKEMAKE_VER=7.32.4  
+ARG PULP_VER=2.7.0
 
 RUN apt update -y && apt upgrade -y
 
@@ -37,7 +38,13 @@ RUN pip install pandas==${PANDAS_VER} \
  matplotlib==${MATPLOTLIB_VER} \
  seaborn==${SEABORN_VER} \
  geopandas==${GEOPANDAS_VER} \
- altair==${ALTAIR_VER}
+ altair==${ALTAIR_VER} \
+ snakemake==${SNAKEMAKE_VER} \ 
+ pulp==${PULP_VER} \
+ jinja2 \
+ PyYAML \
+ mistletoe \
+ fpdf2
 
 RUN apt autoclean
 
