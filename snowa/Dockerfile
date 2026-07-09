@@ -18,6 +18,10 @@ ARG GEOPANDAS_VER=1.1.1
 ARG ALTAIR_VER=5.5.0
 ARG SNAKEMAKE_VER=7.32.4  
 ARG PULP_VER=2.7.0
+ARG JINJA2_VER=3.1.6
+ARG PYYAML_VER=6.0.3
+ARG MISTLETOE_VER=1.5.1
+ARG FPDF2_VER=2.8.7
 
 RUN apt update -y && apt upgrade -y
 
@@ -39,12 +43,12 @@ RUN pip install pandas==${PANDAS_VER} \
  seaborn==${SEABORN_VER} \
  geopandas==${GEOPANDAS_VER} \
  altair==${ALTAIR_VER} \
- snakemake==${SNAKEMAKE_VER} \ 
+ snakemake==${SNAKEMAKE_VER} \
  pulp==${PULP_VER} \
- jinja2 \
- PyYAML \
- mistletoe \
- fpdf2
+ jinja2==${JINJA2_VER} \
+ PyYAML==${PYYAML_VER} \
+ mistletoe==${MISTLETOE_VER} \
+ fpdf2==${FPDF2_VER}
 
 RUN apt autoclean
 
